@@ -1,0 +1,32 @@
+<br>
+<table>
+  <tr>
+    <th data-label="Parent Seller Code">Parent Seller Code</th>
+    <th data-label="Company Short Code">Company Short Code</th>
+    <th data-label="Company Name">Company Name</th>
+    <th data-label="Total License">Total License</th>
+    <th data-label="Client Count">Client Count</th>
+    <th data-label="Job Count">Job Count</th>
+    <th data-label="Resume Bank Count">Resume Bank Count</th>
+    <th data-label="Transaction Count">Transaction Count</th>
+    <th data-label="Offered Count">Offered Count</th>
+    <th data-label="Onboarded Count">Onboarded Count</th>
+  </tr>
+  <!-- <cdk-virtual-scroll-viewport  style="height: 400px" itemSize="20" > -->
+    <!-- <tr class="table-row" *cdkVirtualFor="let item of listData"> -->
+    <tr class="table-row" *ngFor="let item of listData">
+      <td data-label="Parent Seller Code">{{item.parentSellerCode}}</td>
+      <td data-label="Company Short Code">{{item.companyShortCode}}</td>
+      <td data-label="Company Name">{{item.companyName}}</td>
+      <td data-label="Total License">{{item.totalLicense}}</td>
+      <td data-label="Client Count">{{item.clientCount}}</td>
+      <td data-label="Job Count">{{item.jobCount}}</td>
+      <td data-label="Resume Bank Count">{{item.resumeBankCount}}</td>
+      <td data-label="Transaction Count">{{item.transactionCount}}</td>
+      <td data-label="Offered Count">{{item.offeredCount}}</td>
+      <td data-label="Onboarded Count">{{item.onboardedCount}}</td>
+    </tr>
+  <!-- </cdk-virtual-scroll-viewport> -->
+
+
+</table>

@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
-    ChangePasswordComponent,
-    ForgotPasswordComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule

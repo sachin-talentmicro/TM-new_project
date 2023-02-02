@@ -1,43 +1,60 @@
-<!-- <br>
-<div class="container main-box d-flex">
-    <div class="container left-box w-50 text-center">
-        <br>
-        <h4>
-            A first of its kind, AIML based recruitment software (workbench) with world’s first crowdsourcing platform
-            to source ready-for-interview jobseekers in less than 10% of time required in manual process and reduce the
-            cost of sourcing process by 50% or more…
-        </h4>
-        <br>
-        <img src="https://via.placeholder.com/500x350" alt="">
-        
-    </div>
-    <div class="parent w-50">
-        <div class="child">
-            <h2 class="text-white text-center">User Login</h2>
-            <br>
-            <input type="text" class="form-control input-field" placeholder="Enter user ID">
-            <br>
-            <input type="password" class="form-control input-field" placeholder="Enter password">
-            <p class="text-white text-end">Forgot password?</p>
-            <div class="text-center">
-                <button class="btn btn-success w-50 login-btn">Login</button>
-            </div>
+<br><br>
+<div class="container d-flex">
+  <div class="left-box">
+    <div class="p-5">
+      <h4>Login</h4>
+      <br>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter username" formControlName="username">
+          <span *ngIf="username.hasError('required') && username.touched" class="error-message">*Field is
+            mandatory</span>
         </div>
+        <br>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password"
+            formControlName="password">
+          <span *ngIf="password.hasError('required') && password.touched" class="error-message">*Field is
+            mandatory</span>
+          <div class="text-end"><a [routerLink]="[]" (click)="openForgotPasswordModal(content)"
+              class="btn btn-link">Forgot password?</a></div>
+        </div>
+        <br>
+        <button type="submit"  class="btn btn-primary w-100">Login</button>
+      </form>
     </div>
-    <div class="circle"></div>
-</div> -->
+  </div>
 
-<div class="parent">
-    <div class="container child">
-        <br>
-        <h2 class="text-center">User Login</h2>
-        <br>
-        <input type="text" class="form-control input-field" placeholder="Enter user ID">
-        <br>
-        <input type="password" class="form-control input-field" placeholder="Enter password">
-        <p class="text-white text-end">Forgot password?</p>
-        <div class="text-center">
-            <button class="btn btn-success w-50 login-btn">Login</button>
-    </div>
-    </div>
+  <div class="container right-box">
+    <h6 class="text-center me-5">Lorem Ipsum is simply dummy text of<br>the printing and typesetting industry!</h6>
+    <img class="image"
+      src="https://imgs.search.brave.com/-LdlH7fLPHMG3YnuM7wwNM5n5zEDIsmosLh4xyOD5jE/rs:fit:713:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5v/bVdlSGszMmZRQ3ky/SXJONS1lQzVBSGFF/NyZwaWQ9QXBp"
+      alt="">
+  </div>
 </div>
+<br>
+
+<ng-template #content let-modal>
+  <mat-dialog-content class="forgot-password-wrapper p-0">
+    <div class="d-flex justify-content-between forgot-password-header">
+      <h1 mat-dialog-title class="text-white">Forgot Password</h1>
+      <button mat-icon-button mat-dialog-close>
+        <i class="fa-solid close-icon fa-xmark mt-2 text-white"></i>
+      </button>
+    </div>
+    <form>
+      <mat-form-field class="w-100">
+        <label for="userId">User ID<span style="color: red">*</span></label>
+        <br>
+        <input type="text" class="form-control" id="userId" placeholder="Enter your user ID">
+      </mat-form-field>
+      <div mat-dialog-actions class="d-flex justify-content-end">
+        <button mat-dialog-close class="btn btn-danger">Close</button>
+        <button class="btn btn-success ms-3" [mat-dialog-close]="true">Find my account</button>
+      </div>
+    </form>
+  </mat-dialog-content>
+</ng-template>
+
